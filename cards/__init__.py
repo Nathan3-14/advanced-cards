@@ -1,2 +1,2 @@
 from .card import Card
-from .deck import Deckl
+from .deck import Deck
