@@ -1,2 +1,3 @@
 from .card import Card
-from .deck import Deck
+from .deck import Deck, CardList
+from .check import check
