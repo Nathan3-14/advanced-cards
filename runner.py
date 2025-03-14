@@ -63,3 +63,5 @@ if __name__ == "__main__":
     print("Flush F: " + str(check(nothing_list, "10000")) + "\n")
     print("Straight Flush T: " + str(check(flush_straight_straightflush_test_list, "1abcde")))
     print("Straight Flush F: " + str(check(nothing_list, "1abcde")) + "\n")
+    print("Royal Flush T: " + str(check(CardList([Card("10", "C"), Card("J", "C"), Card("Q", "C"), Card("K", "C"), Card("A", "C")]), "1ABCDE")))
+    print("Royal Flush F: " + str(check(CardList([Card("9", "C"), Card("10", "C"), Card("J", "C"), Card("Q", "C"), Card("K", "C")]), "1ABCDE")) + "\n")

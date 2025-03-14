@@ -10,7 +10,7 @@ def _remove_from_dict(_value: Any, _dict: Dict[Any, Any]) -> None:
 
 def check(cardlist: CardList, pattern: str, deck: Deck=Deck()) -> bool:
     console = Console()
-    index = 1
+    index = 0
     pattern_check_suit = pattern[0] == "1"
     values_present = {}
     
@@ -65,14 +65,15 @@ def check(cardlist: CardList, pattern: str, deck: Deck=Deck()) -> bool:
                 if last_card_value == "":
                     last_card_value = temp_card_value
                     deck_cardlist_index = temp_values.index(temp_card_value)
-                    console.log(deck_cardlist_index)
                 else:
-                    console.log(f"{deck_cardlist_index} + {offset_index}")
                     if temp_card_value != temp_values[deck_cardlist_index+offset_index]:
                         if temp_card_value == "A" and temp_values[deck_cardlist_index+offset_index] == "6":
                             continue
-                        print(f"{temp_card_value} != {temp_values[deck_cardlist_index+offset_index]}")
                         is_pattern_valid = False
+            case "A" | "B" | "C" | "D" | "E":
+                #* 10-A Check *#
+                if cardlist[offset_index].value != deck.values[offset_index-4]:
+                    is_pattern_valid = False
 
     
     #* Flush Check *#
